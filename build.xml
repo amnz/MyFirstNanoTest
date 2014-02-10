@@ -4,12 +4,14 @@
          basedir=".">
 
 	<property name="report.test.dir" value="${basedir}/report/test"/>
+	<property environment="env"/>
 
 	<target name="all" depends="buildjs">
 	</target>
 
 	<target name="buildjs" depends="">
-		<exec executable="C:\\usr\\dev\\haxe\\3.0.1\\haxe\\haxe.exe">
+		<echo message="PATH = ${env.Path}"/>
+		<exec executable="haxe.exe">
 			<arg value="nanotest.hxml"/>
 		</exec>
 	</target>
