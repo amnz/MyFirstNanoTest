@@ -20,7 +20,7 @@ class TestSample {
 	 * 
 	 */
 	static function main() {
-		var r = new NanoTestRunner();
+		var r = new NanoTestRunner(NanoTestRunner.error);
 		r.add(new NTMainTest());
 		r.run();
 	}
