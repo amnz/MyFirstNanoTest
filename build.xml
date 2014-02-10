@@ -12,6 +12,7 @@
 	<target name="buildjs" depends="">
 		<echo message="PATH = ${env.Path}"/>
 		<exec executable="haxe.exe">
+			<arg value="C:/usr/java/jenkins/jobs/MyFirstNanoTest/workspace/nanotest.hxml"/>
 		</exec>
 	</target>
 
