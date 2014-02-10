@@ -9,7 +9,7 @@
 	</target>
 
 	<target name="buildjs" depends="">
-		<exec executable="haxe">
+		<exec executable="C:\usr\dev\haxe\3.0.1\haxe\haxe.exe">
 			<arg value="nanotest.hxml"/>
 		</exec>
 	</target>
