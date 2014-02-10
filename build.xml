@@ -10,9 +10,10 @@
 	</target>
 
 	<target name="buildjs" depends="">
-		<echo message="PATH = ${env.Path}"/>
+		<echo message="HOMEDRIVE = ${env.HOMEDRIVE}"/>
+		<echo message="HOMEPATH  = ${env.HOMEPATH}"/>
 		<exec executable="haxe.exe">
-			<arg value="C:/usr/java/jenkins/jobs/MyFirstNanoTest/workspace/nanotest.hxml"/>
+			<arg value="nanotest.hxml"/>
 		</exec>
 	</target>
 
