@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_myfirstnanotest" default="compile.module.myfirstnanotest">
+  <dirname property="module.myfirstnanotest.basedir" file="${ant.file.module_myfirstnanotest}"/>
+  
+  <property name="module.jdk.home.myfirstnanotest" value="${jdk.home.haxe_3.0.0}"/>
+  <property name="module.jdk.bin.myfirstnanotest" value="${jdk.bin.haxe_3.0.0}"/>
+  <property name="module.jdk.classpath.myfirstnanotest" value="jdk.classpath.haxe_3.0.0"/>
+  
+  <property name="compiler.args.myfirstnanotest" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="myfirstnanotest.output.dir" value="${module.myfirstnanotest.basedir}/../out/production/MyFirstNanoTest"/>
+  <property name="myfirstnanotest.testoutput.dir" value="${module.myfirstnanotest.basedir}/../out/production/MyFirstNanoTest"/>
+  
+  <path id="myfirstnanotest.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="myfirstnanotest.module.production.classpath">
+    <path refid="${module.jdk.classpath.myfirstnanotest}"/>
+  </path>
+  
+  <path id="myfirstnanotest.runtime.production.module.classpath">
+    <pathelement location="${myfirstnanotest.output.dir}"/>
+  </path>
+  
+  <path id="myfirstnanotest.module.classpath">
+    <path refid="${module.jdk.classpath.myfirstnanotest}"/>
+    <pathelement location="${myfirstnanotest.output.dir}"/>
+  </path>
+  
+  <path id="myfirstnanotest.runtime.module.classpath">
+    <pathelement location="${myfirstnanotest.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.myfirstnanotest">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.myfirstnanotest">
+    <patternset refid="excluded.from.module.myfirstnanotest"/>
+  </patternset>
+  
+  <path id="myfirstnanotest.module.sourcepath">
+    <dirset dir="${module.myfirstnanotest.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.myfirstnanotest" depends="compile.module.myfirstnanotest.production,compile.module.myfirstnanotest.tests" description="Compile module MyFirstNanoTest"/>
+  
+  <target name="compile.module.myfirstnanotest.production" depends="register.custom.compilers" description="Compile module MyFirstNanoTest; production classes">
+    <mkdir dir="${myfirstnanotest.output.dir}"/>
+    <javac2 destdir="${myfirstnanotest.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.myfirstnanotest}/javac">
+      <compilerarg line="${compiler.args.myfirstnanotest}"/>
+      <bootclasspath refid="myfirstnanotest.module.bootclasspath"/>
+      <classpath refid="myfirstnanotest.module.production.classpath"/>
+      <src refid="myfirstnanotest.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.myfirstnanotest"/>
+    </javac2>
+    
+    <copy todir="${myfirstnanotest.output.dir}">
+      <fileset dir="${module.myfirstnanotest.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.myfirstnanotest.tests" depends="register.custom.compilers,compile.module.myfirstnanotest.production" description="compile module MyFirstNanoTest; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.myfirstnanotest" description="cleanup module">
+    <delete dir="${myfirstnanotest.output.dir}"/>
+    <delete dir="${myfirstnanotest.testoutput.dir}"/>
+  </target>
+</project>

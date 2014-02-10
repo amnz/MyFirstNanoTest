@@ -1,0 +1,3 @@
+-cp src/
+-main NTMain
+-js bin/NTMain.js

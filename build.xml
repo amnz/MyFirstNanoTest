@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<project name="GitHubTest"
+         default="all"
+         basedir=".">
+
+	<property name="report.test.dir" value="${basedir}/report/test"/>
+
+	<target name="all" depends="buildjs">
+	</target>
+
+	<target name="buildjs" depends="">
+		<exec executable="haxe">
+			<arg value="nanotest.hxml"/>
+		</exec>
+	</target>
+	
+	<target name="unit-test" description="execute haxe NanoTest">
+		<exec executable="haxe">
+			<arg value="nanotest.hxml"/>
+		</exec>
+	</target>
+
+</project>

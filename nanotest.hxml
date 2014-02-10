@@ -1,0 +1,8 @@
+-cp src/
+-cp test/
+-lib nanotest
+
+--macro TestSample.main()
+
+-main NTMain
+-js bin/NTMain.js
