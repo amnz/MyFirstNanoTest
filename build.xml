@@ -13,7 +13,8 @@
 		<echo message="HOMEDRIVE = ${env.HOMEDRIVE}"/>
 		<echo message="HOMEPATH  = ${env.HOMEPATH}"/>
 		<exec executable="haxe.exe"
-		    failonerror="true">
+			failonerror="true"
+			>
 			<arg value="nanotest.hxml"/>
 		</exec>
 	</target>

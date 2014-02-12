@@ -9,7 +9,6 @@ public class JTest {
 	 */
 	public JTest() {
 		System.out.println("test");
-		dont compile!
 	}
 
 }

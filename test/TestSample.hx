@@ -1,6 +1,7 @@
 package ;
 
 import shohei909.nanotest.NanoTestRunner;
+import haxe.macro.Context;
 
 /**
  * NanoTestサンプル
@@ -20,9 +21,9 @@ class TestSample {
 	 * 
 	 */
 	static function main() {
-		var r = new NanoTestRunner(NanoTestRunner.error);
+		var r = new NanoTestRunner();
 		r.add(new NTMainTest());
-		r.run();
+		if(!r.run()) { throw "NanoTest Failure."; }
 	}
 
 }

@@ -26,7 +26,7 @@ class NTMain {
 	 *	デフォルトの設定を用いてオブジェクトを構築するコンストラクタ
 	 */
 	public function new() {
-		trace("test");
+		
 	}
 	
 	/**

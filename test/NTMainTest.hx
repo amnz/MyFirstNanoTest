@@ -25,13 +25,21 @@ class NTMainTest extends NanoTestCase {
 	 **/
 	public function testBasic2() {
 		var main = new NTMain();
-		assertEquals("A", "A");
+		assertEquals("A", "B");
 	}
 
 	/**
 	 *
 	 **/
 	public function testBasic3() {
+		var main = new NTMain();
+		assertEquals("A", "B");
+	}
+
+	/**
+	 *
+	 **/
+	public function testBasic4() {
 		var main = new NTMain();
 		assertEquals("A", "A");
 	}
