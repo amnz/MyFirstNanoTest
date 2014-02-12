@@ -6,7 +6,7 @@
 	<property name="report.test.dir" value="${basedir}/report/test"/>
 	<property environment="env"/>
 
-	<target name="all" depends="buildjs">
+	<target name="all" depends="buildjs, jar">
 	</target>
 
 	<target name="buildjs" depends="">
