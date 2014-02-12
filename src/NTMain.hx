@@ -27,6 +27,7 @@ class NTMain {
 	 */
 	public function new() {
 		trace("test");
+		compile error.
 	}
 	
 	/**

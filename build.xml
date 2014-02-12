@@ -12,9 +12,19 @@
 	<target name="buildjs" depends="">
 		<echo message="HOMEDRIVE = ${env.HOMEDRIVE}"/>
 		<echo message="HOMEPATH  = ${env.HOMEPATH}"/>
-		<exec executable="haxe.exe">
+		<exec executable="haxe.exe"
+		    failonerror="true">
 			<arg value="nanotest.hxml"/>
 		</exec>
+	</target>
+	
+	<target name="buildJava">
+        <javac srcdir="java" destdir="bin">
+            
+        </javac>
+	</target>
+	
+	<target name="jar" depends="buildJava">
 	</target>
 
 </project>
